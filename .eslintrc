@@ -1,0 +1,26 @@
+{
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": [
+    "plugin:@coorpacademy/coorpacademy/core",
+    "plugin:@coorpacademy/coorpacademy/mocha",
+    "plugin:@coorpacademy/coorpacademy/lodash-fp",
+    "plugin:@coorpacademy/coorpacademy/prettier",
+    "plugin:@coorpacademy/coorpacademy/es20XX"
+  ],
+  "plugins": [
+    "@coorpacademy/coorpacademy"
+  ],
+  "rules": {
+    "fp/no-class": "off",
+    "class-methods-use-this": "off",
+    "promise/no-native": "off"
+  },
+  "globals": {
+    "browser": true
+  }
+}
