@@ -1,27 +1,12 @@
 const test = require('ava');
-const AWS = require('aws-sdk');
 const Bromise = require('bluebird');
 const session = require('express-session');
-const DynamoDbStore = require('connect-dynamodb')({session});
-const RedisStore = require('connect-redis')(session);
+const MemoryStore = require('memorystore')(session);
 const MigrationStore = require('../src/migration-store')(session);
 
-const makeDynamoDbStore = () => {
-  const client = new AWS.DynamoDB({
-    endpoint: new AWS.Endpoint('http://localhost:8000'),
-    region: 'eu-west-4'
-  });
-  return new DynamoDbStore({client, table: 'migration-session-test'});
-};
-const makeRedisStore = () => new RedisStore();
-
 test.beforeEach(t => {
-  t.context.from = makeRedisStore();
-  t.context.to = makeDynamoDbStore();
-});
-test.afterEach.always(async t => {
-  await Bromise.fromCallback(cb => t.context.from.destroy('42'));
-  await Bromise.fromCallback(cb => t.context.to.destroy('42'));
+  t.context.from = new MemoryStore();
+  t.context.to = new MemoryStore();
 });
 
 test('should be created and substore accessible', t => {
@@ -30,8 +15,8 @@ test('should be created and substore accessible', t => {
     to: t.context.to
   });
   t.true(store instanceof MigrationStore);
-  t.true(store.fromStore instanceof RedisStore);
-  t.true(store.toStore instanceof DynamoDbStore);
+  t.true(store.fromStore instanceof MemoryStore);
+  t.true(store.toStore instanceof MemoryStore);
 });
 
 test('should get session from "to" if defined', async t => {
