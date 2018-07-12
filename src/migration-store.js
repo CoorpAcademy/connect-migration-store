@@ -1,7 +1,8 @@
 module.exports = function(session) {
   const Store = session.Store;
   function MigrationStore(options) {
-    // §TODO ensure from and to store are present
+    if (!(options.from instanceof Store)) throw new Error('options.from must be a session store');
+    if (!(options.to instanceof Store)) throw new Error('options.to must be a session store');
     this.fromStore = options.from;
     this.toStore = options.to;
     Store.call(this, options);
@@ -20,6 +21,10 @@ module.exports = function(session) {
 
   MigrationStore.prototype.set = function(sid, sess, cb) {
     this.toStore.set(sid, sess, cb);
+  };
+
+  MigrationStore.prototype.touch = function(sid, sess, cb) {
+    this.toStore.touch(sid, sess, cb);
   };
 
   MigrationStore.prototype.destroy = function(sid, cb) {

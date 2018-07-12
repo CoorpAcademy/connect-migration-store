@@ -19,6 +19,22 @@ test('should be created and substore accessible', t => {
   t.true(store.toStore instanceof MemoryStore);
 });
 
+test('should not be created with invalid arguments', t => {
+  t.throws(
+    () =>
+      new MigrationStore({
+        from: t.context.from
+      })
+  );
+  t.throws(
+    () =>
+      new MigrationStore({
+        from: 3,
+        to: 'to'
+      })
+  );
+});
+
 test('should get session from "to" if defined', async t => {
   const store = new MigrationStore({from: t.context.from, to: t.context.to});
   await Bromise.fromCallback(cb =>
