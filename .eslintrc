@@ -2,12 +2,10 @@
   "env": {
     "commonjs": true,
     "es6": true,
-    "node": true,
-    "mocha": true
+    "node": true
   },
   "extends": [
     "plugin:@coorpacademy/coorpacademy/core",
-    "plugin:@coorpacademy/coorpacademy/mocha",
     "plugin:@coorpacademy/coorpacademy/lodash-fp",
     "plugin:@coorpacademy/coorpacademy/prettier",
     "plugin:@coorpacademy/coorpacademy/es20XX"
