@@ -46,11 +46,15 @@ test('should set session in "to"', async t => {
   t.deepEqual(sess, {cookie: {maxAge: 2000}, name: 'migration'});
 });
 
-test('should destroy session in "to"', async t => {
+test('should destroy session in "to" and "from', async t => {
   const store = new MigrationStore({from: t.context.from, to: t.context.to});
   await Bromise.fromCallback(cb =>
-    store.set('42', {cookie: {maxAge: 2000}, name: 'migration'}, cb)
+    store.fromStore.set('42', {cookie: {maxAge: 2000}, name: 'tobedestroyed'}, cb)
   );
+  await Bromise.fromCallback(cb =>
+    store.toStore.set('42', {cookie: {maxAge: 2002}, name: 'tobedestroyed'}, cb)
+  );
+  await Bromise.fromCallback(cb => store.destroy('42', cb));
   const sess = await Bromise.fromCallback(cb => store.toStore.get('42', cb));
-  t.deepEqual(sess, {cookie: {maxAge: 2000}, name: 'migration'});
+  t.is(sess, undefined);
 });
