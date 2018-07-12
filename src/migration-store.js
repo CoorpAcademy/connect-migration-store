@@ -18,5 +18,21 @@ module.exports = function(session) {
     });
   };
 
+  MigrationStore.prototype.set = function(sid, sess, cb) {
+    this.toStore.set(sid, sess, cb);
+  };
+
+  MigrationStore.prototype.destroy = function(sid, cb) {
+    this.toStore.get(sid, (err, res) => {
+      if (err) return cb(err);
+      if (res)
+        return this.toStore.destroy(sid, (err2, res2) => {
+          if (err2) return cb(err2);
+          this.fromStore.destroy(sid, cb);
+        });
+      this.fromStore.destroy(sid, cb);
+    });
+  };
+
   return MigrationStore;
 };

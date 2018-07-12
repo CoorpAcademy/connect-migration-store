@@ -36,3 +36,21 @@ test('should get session from "from" if not defined in "to"', async t => {
   const sess = await Bromise.fromCallback(cb => store.get('42', cb));
   t.deepEqual(sess, {cookie: {maxAge: 2000}, name: 'redisStore'});
 });
+
+test('should set session in "to"', async t => {
+  const store = new MigrationStore({from: t.context.from, to: t.context.to});
+  await Bromise.fromCallback(cb =>
+    store.set('42', {cookie: {maxAge: 2000}, name: 'migration'}, cb)
+  );
+  const sess = await Bromise.fromCallback(cb => store.toStore.get('42', cb));
+  t.deepEqual(sess, {cookie: {maxAge: 2000}, name: 'migration'});
+});
+
+test('should destroy session in "to"', async t => {
+  const store = new MigrationStore({from: t.context.from, to: t.context.to});
+  await Bromise.fromCallback(cb =>
+    store.set('42', {cookie: {maxAge: 2000}, name: 'migration'}, cb)
+  );
+  const sess = await Bromise.fromCallback(cb => store.toStore.get('42', cb));
+  t.deepEqual(sess, {cookie: {maxAge: 2000}, name: 'migration'});
+});
