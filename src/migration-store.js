@@ -15,7 +15,15 @@ module.exports = function(session) {
     this.toStore.get(sid, (err, res) => {
       if (err) return cb(err);
       if (res) return cb(null, res);
-      this.fromStore.get(sid, cb);
+      this.fromStore.get(sid, (nerr, sess) => {
+        // migrate the old value for the new
+        if (nerr) return cb(nerr);
+        if (sess)
+          return this.toStore.set(sid, sess, () => {
+            return cb(null, sess);
+          });
+        return cb(null, sess);
+      });
     });
   };
 
