@@ -1,0 +1,12 @@
+{
+  "name": "connect-migration-store",
+  "version": "0.1.0",
+  "description": "Connect Migration Store for express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["express", "session", "store"],
+  "author": "Adrien Becchis",
+  "license": "MIT"
+}
