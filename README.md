@@ -1,5 +1,6 @@
 connect-migration-store
 =======================
+[![Build Status](https://travis-ci.org/CoorpAcademy/connect-migration-store.svg?branch=master)](https://travis-ci.org/CoorpAcademy/connect-migration-store)
 
 > Connect Migration Store for express
 
