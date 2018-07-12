@@ -10,5 +10,13 @@ module.exports = function(session) {
   // Inherit from `Store`
   MigrationStore.prototype.__proto__ = Store.prototype;
 
+  MigrationStore.prototype.get = function(sid, cb) {
+    this.toStore.get(sid, (err, res) => {
+      if (err) return cb(err);
+      if (res) return cb(null, res);
+      this.fromStore.get(sid, cb);
+    });
+  };
+
   return MigrationStore;
 };
