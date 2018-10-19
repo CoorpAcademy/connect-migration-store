@@ -7,22 +7,23 @@ connect-migration-store
 
 > Connect Migration Store for express
 
-This lib is here to help you migrate from an existing session store to another.
+This lib is here to help you **migrate from an existing session store to another**
+without disconnecting your users.
 
 ## Installation
 
-Project can be found on npm, and installed with a classic
+Project can be found on npm, and installed with a classic `npm i`.
 
 ```sh
   npm install --save connect-migration-store
 ```
 
 ## Usage
-To use migration store, you need to instantiate your the migration store with two store:
+To use migration store, you need to instantiate your migration store with two store:
 the original one you want to migrate from, and the new one you want to migrate to.
 Then you can feed it to the session express middleware.
 
-Here is below an example migrating from *redis* to *dynamodb*.
+Here is below an example migrating from *redis* to *dynamodb*:
 
 ```js
 const express = require('express');
@@ -43,8 +44,8 @@ app.use(session({store: migrationStore, secret: '42'});
 // and do what you need with your server
 ```
 
-Then deploy, let it in place for few days, the duration of your migration,
-then you can remove it and replace it with the new store.
+Then deploy, let it in place for few days, the duration of your migration.
+Then you can remove it and replace it with the new store.
 Your migration is now complete :wink:
 
 ## License and Contributing
