@@ -30,7 +30,6 @@ const express = require('express');
 const session = require('express-session');
 const DynamoDBStore = require('connect-dynamodb')({session});
 const RedisStore = require('connect-redis')(session);
-const RedisStore = require('connect-redis')(session);
 const MigrationStore = require('connect-migration-store')(session);
 
 // Store creation

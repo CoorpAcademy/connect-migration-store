@@ -1,6 +1,6 @@
 {
   "name": "connect-migration-store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect Migration Store for express",
   "main": "src/migration-store.js",
   "scripts": {
@@ -11,6 +11,7 @@
   },
   "keywords": [
     "express",
+    "connect",
     "session",
     "store",
     "migration"
