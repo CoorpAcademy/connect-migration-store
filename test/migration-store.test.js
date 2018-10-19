@@ -62,8 +62,6 @@ test('should get session from "from" if not defined in "to" and set back session
   t.deepEqual(sess, {cookie: {maxAge: 2000}, name: 'redisStore'});
   const newSess = await Bromise.fromCallback(cb => store.toStore.get('42', cb));
   t.deepEqual(newSess, {cookie: {maxAge: 2000}, name: 'redisStore'});
-
-
 });
 
 test('should set session in "to"', async t => {

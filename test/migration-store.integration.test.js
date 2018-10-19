@@ -23,5 +23,6 @@ test.serial('integration test', t => {
   t.true(store instanceof MigrationStore);
   t.true(store.fromStore instanceof RedisStore);
   t.true(store.toStore instanceof DynamoDbStore);
-  // TODO: more to be done
+  // TODO: more to be done:
+  // write a session to RedisStore, then get it from migration store and ensure it's present in dynamostore
 });
