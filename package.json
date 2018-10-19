@@ -1,6 +1,6 @@
 {
   "name": "connect-migration-store",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Connect Migration Store for express",
   "main": "src/migration-store.js",
   "scripts": {
@@ -12,7 +12,8 @@
   "keywords": [
     "express",
     "session",
-    "store"
+    "store",
+    "migration"
   ],
   "author": "Adrien Becchis",
   "license": "MIT",
