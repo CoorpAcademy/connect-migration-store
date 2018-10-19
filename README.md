@@ -3,6 +3,7 @@ connect-migration-store
 
 [![npm](https://img.shields.io/npm/v/connect-migration-store.svg)](https://github.com/CoorpAcademy/connect-migration-store)
 [![Build Status](https://travis-ci.org/CoorpAcademy/connect-migration-store.svg?branch=master)](https://travis-ci.org/CoorpAcademy/connect-migration-store)
+[![codecov](https://codecov.io/gh/CoorpAcademy/connect-migration-store/branch/master/graph/badge.svg)](https://codecov.io/gh/CoorpAcademy/connect-migration-store)
 
 > Connect Migration Store for express
 

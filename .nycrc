@@ -1,0 +1,9 @@
+{
+  "exclude": [
+    "test/**/*"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "all": true
+}

@@ -5,6 +5,8 @@
   "main": "src/migration-store.js",
   "scripts": {
     "test": "ava",
+    "cover": "nyc npm test",
+    "publish-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "eslint src test"
   },
   "keywords": [
@@ -19,10 +21,12 @@
     "ava": "^0.25.0",
     "aws-sdk": "^2.273.1",
     "bluebird": "^3.5.1",
+    "codecov": "^3.1.0",
     "connect-dynamodb": "^2.0.1",
     "connect-redis": "^3.3.3",
     "eslint": "^5.1.0",
     "express-session": "^1.15.6",
-    "memorystore": "^1.6.0"
+    "memorystore": "^1.6.0",
+    "nyc": "^13.1.0"
   }
 }

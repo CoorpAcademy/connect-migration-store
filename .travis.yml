@@ -11,4 +11,7 @@ install:
 
 script:
   - npm run lint || true
-  - npm test
+  - npm run cover
+
+after_success:
+  - npm run publish-coverage
