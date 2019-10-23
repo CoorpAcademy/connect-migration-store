@@ -1,0 +1,5 @@
+test
+.gitignore
+.nycrc
+.travis.yml
+docker-compose.yml
