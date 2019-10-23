@@ -4,9 +4,10 @@
   "description": "Connect Migration Store for express",
   "main": "src/migration-store.js",
   "scripts": {
-    "test": "nyc ava",
-    "publish-coverage": "codecov",
-    "lint": "eslint src test"
+    "ava": "nyc ava",
+    "lint": "eslint src test",
+    "test": "npm run lint && npm run ava",
+    "publish-coverage": "codecov"
   },
   "keywords": [
     "express",
