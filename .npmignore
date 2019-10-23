@@ -3,3 +3,6 @@ test
 .nycrc
 .travis.yml
 docker-compose.yml
+.nyc_output
+coverage
+coverage.lcov
