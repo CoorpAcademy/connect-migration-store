@@ -19,16 +19,16 @@
   "author": "Adrien Becchis @Coorpacademy",
   "license": "MIT",
   "devDependencies": {
-    "@coorpacademy/eslint-plugin-coorpacademy": "^8.1.1",
-    "ava": "^0.25.0",
-    "aws-sdk": "^2.273.1",
-    "bluebird": "^3.5.1",
-    "codecov": "^3.1.0",
-    "connect-dynamodb": "^2.0.1",
-    "connect-redis": "^3.3.3",
-    "eslint": "^5.1.0",
-    "express-session": "^1.15.6",
-    "memorystore": "^1.6.0",
-    "nyc": "^13.1.0"
+    "@coorpacademy/eslint-plugin-coorpacademy": "^8.3.1",
+    "ava": "^2.4.0",
+    "aws-sdk": "^2.554.0",
+    "bluebird": "^3.7.1",
+    "codecov": "^3.6.1",
+    "connect-dynamodb": "^2.0.3",
+    "connect-redis": "^4.0.3",
+    "eslint": "^5.16.0",
+    "express-session": "^1.17.0",
+    "memorystore": "^1.6.1",
+    "nyc": "^14.1.1"
   }
 }
