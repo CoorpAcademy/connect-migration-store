@@ -16,7 +16,7 @@
     "store",
     "migration"
   ],
-  "author": "Adrien Becchis",
+  "author": "Adrien Becchis @Coorpacademy",
   "license": "MIT",
   "devDependencies": {
     "@coorpacademy/eslint-plugin-coorpacademy": "^8.1.1",
