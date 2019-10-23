@@ -1,9 +1,6 @@
 {
-  "exclude": [
-    "test/**/*"
-  ],
-  "include": [
-    "src/**/*"
-  ],
-  "all": true
+  "exclude": ["test/**/*"],
+  "include": ["src/**/*"],
+  "all": true,
+  "reporters": ["text", "text-summary", "lcov"]
 }

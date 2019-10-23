@@ -4,9 +4,8 @@
   "description": "Connect Migration Store for express",
   "main": "src/migration-store.js",
   "scripts": {
-    "test": "ava",
-    "cover": "nyc npm test",
-    "publish-coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "test": "nyc ava",
+    "publish-coverage": "codecov",
     "lint": "eslint src test"
   },
   "keywords": [
