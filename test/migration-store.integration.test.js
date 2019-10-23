@@ -12,9 +12,9 @@ const makeDynamoDbStore = () => {
   });
   return new DynamoDbStore({client, table: 'migration-session-test'});
 };
-const makeRedisStore = () => new RedisStore();
+const makeRedisStore = () => new RedisStore({client: 'FAKE CLIENT'});
 
-test.serial('integration test', t => {
+test.serial('pseudo integration test', t => {
   const store = new MigrationStore({
     from: makeRedisStore(),
     to: makeDynamoDbStore()
