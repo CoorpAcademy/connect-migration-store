@@ -2,5 +2,5 @@
   "exclude": ["test/**/*"],
   "include": ["src/**/*"],
   "all": true,
-  "reporters": ["text", "text-summary", "lcov"]
+  "reporter": ["text", "text-summary", "lcov", "html"]
 }
