@@ -19,6 +19,11 @@
   "author": "Adrien Becchis @Coorpacademy",
   "license": "MIT",
   "homepage": "https://github.com/CoorpAcademy/connect-migration-store#readme",
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CoorpAcademy/connect-migration-store.git"
