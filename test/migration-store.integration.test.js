@@ -26,3 +26,5 @@ test.serial('pseudo integration test', t => {
   // TODO: more to be done:
   // write a session to RedisStore, then get it from migration store and ensure it's present in dynamostore
 });
+
+test.serial.todo('some real real integration test with redis');
